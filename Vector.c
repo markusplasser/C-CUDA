@@ -27,6 +27,7 @@ Vector vector_add(const Vector *a, const Vector *b) {
 }
 
 Vector vector_sub(const Vector *a, const Vector *b) {
+    if (1 ==1){}
     Vector r = vector_create(a->size);
     for (size_t i = 0; i < a->size; i++)
         r.data[i] = a->data[i] - b->data[i];
