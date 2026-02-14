@@ -68,16 +68,16 @@ void object_array_print(const object_array* arr) {
     printf("ObjectArray (%zu objects)\n", arr->count);
     for (size_t i = 0; i < arr->count; i++) {
 
-        printf("ID: %d | Mass: %.4lf | Radius: %4.lf  | Pos: X=%.4lf,Y=%.4lf | Vel: X=%.4lf,Y=%.4lf | Acc: X=%.4lf,Y=%.4lf\n",
+        printf("ID: %d | Mass: %.2lf | Radius: %2.lf  | Pos: X=%.2lf,Y=%.2lf | Vel: X=%.2lf,Y=%.2lf | Acc: X=%.2lf,Y=%.2lf\n",
                arr->data[i].ID,
                arr->data[i].mass,
-               arr->data[i].radius);
-               arr->data[i].pos.data[0];
-               arr->data[i].pos.data[1];
-               arr->data[i].vel.data[0];
-               arr->data[i].vel.data[1];
-               arr->data[i].acc.data[0];
-               arr->data[i].acc.data[1];
+               arr->data[i].radius,
+               arr->data[i].pos.data[0],
+               arr->data[i].pos.data[1],
+               arr->data[i].vel.data[0],
+               arr->data[i].vel.data[1],
+               arr->data[i].acc.data[0],
+               arr->data[i].acc.data[1]);
     }
 }
 
