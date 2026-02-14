@@ -6,7 +6,6 @@ project(CudaTest LANGUAGES C CXX CUDA)
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
-# Safer default: build for the local GPU
 # Override manually if you want reproducible binaries
 set(CMAKE_CUDA_ARCHITECTURES native)
 
@@ -15,6 +14,8 @@ add_executable(CudaTest
         Vector.c
         Object.c
         ObjectArray.c
+        Oberfläche.c
+        Calc.c
 )
 
 # Ensure C files stay C
@@ -22,9 +23,13 @@ set_source_files_properties(
         Vector.c
         Object.c
         ObjectArray.c
+        Oberfläche.c
         PROPERTIES
         LANGUAGE C
 )
+find_package(raylib CONFIG REQUIRED)
+target_link_libraries(CudaTest PRIVATE raylib)
+
 
 # Optional but common when mixing CUDA + C/C++
 set_target_properties(CudaTest PROPERTIES

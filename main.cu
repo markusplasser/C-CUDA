@@ -2,25 +2,34 @@ extern "C" {
 #include "Object.h"
 #include "ObjectArray.h"
 #include <stdio.h>
+#include "Calc.h"
+#include "raylib.h"
 }
-
 ObjectArray arr;
 
+void add() {
+    object_array_add(&arr,create_andSetValue(1000000,20,create_Value_2D(20.0,10.0),create_Value_2D(0,0),create_Value_2D(0,0)));
+    object_array_add(&arr,create_andSetValue(5000000,20,create_Value_2D(10.0,10.0),create_Value_2D(0.0,0),create_Value_2D(0,0)));
+}
 
+void start() {
+    InitWindow(1000,1000,"Test");
+}
 
 int main() {
-    printf("Hello World!\n");
     arr = object_array_create(100);
-    Vector dim2 = create_Value_2D(5000000,5.0);
-    obj o = create_andSetValue(10000,20,dim2,create_Value_2D(5.0,0),create_Value_2D(0,0));
-    object_array_add(&arr,o);
-    object_array_add(&arr,create_andSetValue(10000,20,create_Value_2D(10.0,10.0),create_Value_2D(0.0,0),create_Value_2D(0,0)));
 
+    add();
     object_array_print(&arr);
 
-    for (int i = 0; i < 1000;i++) {
-        calc_oneTick(&arr,0.01);
+    start();
+
+    for (int i = 0; i < 15;i++) {
+        calc_oneTick(&arr,100);
     }
 
+    while (!WindowShouldClose()) {
+
+    }
     object_array_print(&arr);
 }

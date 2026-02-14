@@ -22,9 +22,8 @@ typedef struct {
     obj createObjectZero();
     void setValuesToObject(obj *obj,  double mass, double radius, Vector pos, Vector vel, Vector acc);
     void printObj(obj *obj);
-    void durchschnitt(struct ObjectArray *arr,int id);
     obj create_andSetValue(const double mass, const double radius, const Vector pos, const Vector vel, const Vector acc);
-    void calc_oneTick(struct ObjectArray *arr,double dt);
+
 
 #ifdef __cplusplus
 }

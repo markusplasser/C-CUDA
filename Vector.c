@@ -47,13 +47,21 @@ double calc_distance(const Vector *a, const Vector *b) {
     return sqrt(dx*dx + dy*dy + dz*dz);
 }
 
+Vector delta_Vector(const Vector *a, const Vector *b) {
+    Vector ret = vector_create(a->size);
+    for (size_t i = 0; i < a->size; i++)
+        ret.data[i] = b->data[i] - a->data[i];
+    return ret;
+}
+
 Vector normal_Vector(Vector v ,Vector v2) {
-    Vector r;
-    r = vector_create(v.size);
+    Vector r = delta_Vector(&v,&v2);
+    Vector ret = vector_create(v.size);
     double len = calc_distance(&v, &v2);
     for (size_t i = 0; i < v.size; i++)
-        r.data[i] = v.data[i]/len;
-    return r;
+        ret.data[i] = r.data[i]/len;
+    vector_free(&r);
+    return ret;
 }
 
 
