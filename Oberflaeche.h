@@ -5,5 +5,5 @@
 #ifndef MEINCUDAPROJEKT_OBERFLÄCHE_H
 #define MEINCUDAPROJEKT_OBERFLÄCHE_H
 
-void start();
+void start(ObjectArray *arr,int time_step);
 #endif //MEINCUDAPROJEKT_OBERFLÄCHE_H

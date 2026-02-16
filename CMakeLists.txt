@@ -14,7 +14,7 @@ add_executable(CudaTest
         Vector.c
         Object.c
         ObjectArray.c
-        Oberfläche.c
+        Oberflaeche.c
         Calc.c
 )
 
@@ -23,7 +23,8 @@ set_source_files_properties(
         Vector.c
         Object.c
         ObjectArray.c
-        Oberfläche.c
+        Oberflaeche.c
+        Calc.c
         PROPERTIES
         LANGUAGE C
 )

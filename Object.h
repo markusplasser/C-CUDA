@@ -10,6 +10,10 @@ extern "C" {
 
 typedef struct ObjectArray object_array;
 
+// typedef struct {
+//
+// }Color;
+
 typedef struct {
         int ID;
         double mass;
@@ -17,6 +21,7 @@ typedef struct {
         Vector pos;
         Vector vel;
         Vector acc;
+
     } obj;
 
     obj createObjectZero();
